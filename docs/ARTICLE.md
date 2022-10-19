@@ -127,11 +127,10 @@ Push the changes in your Git repository to your remote GitHub repository.
 
 This will open a new window that will take you through giving Netlify permissions to your GitHub account. Give Netlify the necessary permissions and at least give Netlify access to the GitHub repository you just created.
 
-![Select GitHub as Git provider](https://www.dropbox.com/s/ukfx9mnemk3i22c/import-an-existing-project-netlify-tinyp.png?raw=1)
-
+![Select GitHub as Git provider](https://www.dropbox.com/s/rc3yalbz6bgi5e1/select-github-as-git-provider-tinyp.png?raw=1)
 - Select the repository for your Blazor app.
 
-![Select GitHub as Git provider](https://www.dropbox.com/s/ukfx9mnemk3i22c/import-an-existing-project-netlify-tinyp.png?raw=1)
+![Select project repo](https://www.dropbox.com/s/gw0sdm6p7i5nfyg/pick-a-git-repo-tinyp.png?raw=1)
 
 - Provide the build command and where the published files can be found. 
 
@@ -139,19 +138,23 @@ This will open a new window that will take you through giving Netlify permission
 >
 >Netlify's build agent has all the required .NET tooling installed on their Ubuntu build machines.
 
+- Leave the **Base directory** field blank unless your GitHub repo is a monorepo or your Blazor app was built in a sub-directory of your GitHub repo.
+
+The **Base directory** is the directory where Netlify installs dependencies and runs your build command.
+
 - In the **Build command** field enter `dotnet publish -c Release -o release`. 
 
 `dotnet publish` creates a `publish` directory with a `wwwroot` folder. This `wwwroot` folder has everything needed for your deployment. The flag `-c Release` tells the CLI to build in Release configuration. The flag `-o release` tells the CLI to put the output in the release folder.
 
 - In the **Publish directory** field enter `release/wwwroot`. Finally, click the **Deploy site** button.
 
-![Build settings for your site](https://www.dropbox.com/s/ukfx9mnemk3i22c/import-an-existing-project-netlify-tinyp.png?raw=1)
+![Build settings for your site](https://www.dropbox.com/s/3snmrksrikyh3k0/build-settings-for-your-site-tinyp.png?raw=1)
 
-Netlify will create the site and you will be redirected to the site overview page. On this page, you can see the deploy status change in real-time. You can see log output as Netlify builds your site. 
+Netlify will create the site and you will be redirected to the site overview page. On this page, you can see the deploy status change in real-time. You can see the log output as Netlify builds your site. 
 
-- Once your deployment finishes, click on the **Preview** button and you will see your app running in your browser hosted by Netlify.
+- Once your deployment finishes, a link to your site will be generated. Click on the link and you will see your app running in your browser hosted by Netlify.
 
-![Live Blazor app hosted on Netlify](https://www.dropbox.com/s/ukfx9mnemk3i22c/import-an-existing-project-netlify-tinyp.png?raw=1)
+![Live Blazor app hosted on Netlify](https://www.dropbox.com/s/bbymv8oqysytr4z/live-blazor-app-hosted-on-netify-tinyp.png?raw=1)
 
 With that you should be done. Everything should be working fine.
 

@@ -9,7 +9,7 @@ This repository serves as a code container for this tutorial: [How to Deploy a B
 
 ## App Demo
 
-![App Demo](/docs/app-demo.gif)
+![App Demo](/docs/app-demo-github-f10.gif)
 
 ## Prerequisites
 
